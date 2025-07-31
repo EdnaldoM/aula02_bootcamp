@@ -4,11 +4,50 @@ import string
 # #### Inteiros (`int`)
 
 # 1. Escreva um programa que soma dois números inteiros inseridos pelo usuário.
+# qtd = int(input('Quantos números você deseja somar? '))
+# i = 0
+# soma = 0
+# n = 0
+# while i < qtd-1:
+#     i = i - 1
+#     for i in range(qtd):
+#         try:
+#             n = int(input(f'Digite o {i+1}º número: '))
+#             soma = soma + n
+#         except:
+#             print(f'Seu {i+1}º input não é um número. Comece de novo e digite os {qtd} números.')
+            
+#             # soma = 0
+#             break
 
-# numero1 = int(input("Digite um número: "))
-# numero2 = int(input("Digite outro número: "))
-# soma = numero1 + numero2
 # print(f'A soma dos números é {soma}')
+
+
+i = 0
+soma = 0
+n = 0
+j = 0
+qtd = 0
+
+while j == 0:
+    try:
+        qtd = int(input('Quantos números você deseja somar? '))
+        j = 1
+    except:
+        print(f'Isso não é um número inteiro.')
+
+while i < qtd:
+    i+=1
+    try:
+        n = int(input(f'Digite o {i}º número: '))
+        soma = soma + n
+    except:
+        print(f'Seu {i}º input não é um número. Tente novamente.')
+        i-=1
+        # soma = 0
+
+print(f'A soma dos números é {soma}')
+
 
 # 2. Crie um programa que receba um número do usuário e calcule o resto da divisão desse número por 5.
 
@@ -127,11 +166,11 @@ import string
 
 # 18. Desenvolva um programa que peça ao usuário para inserir um valor booleano e, em seguida, inverta esse valor.
 
-valor1 = input("Digite um valor booleano: ").lower().strip() == 'true' 
-# Quando precisar de um input booleano, sempre comparar o texto do usuário com o valor que se quer.
-# Se eu colocar só bool(input("Digite...")) o python irá verificar se existe uma string no input. Se sim, irá sempre retornar True, independente do que foi escrito.
-# Precisamos comparar a string com algo para aí sim termos um valor True ou False.
-print(not valor1)
+# valor1 = input("Digite um valor booleano: ").lower().strip() == 'true' 
+# # Quando precisar de um input booleano, sempre comparar o texto do usuário com o valor que se quer.
+# # Se eu colocar só bool(input("Digite...")) o python irá verificar se existe uma string no input. Se sim, irá sempre retornar True, independente do que foi escrito.
+# # Precisamos comparar a string com algo para aí sim termos um valor True ou False.
+# print(not valor1)
 
 # 19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
 
