@@ -4,49 +4,31 @@ import string
 # #### Inteiros (`int`)
 
 # 1. Escreva um programa que soma dois números inteiros inseridos pelo usuário.
-# qtd = int(input('Quantos números você deseja somar? '))
+
 # i = 0
 # soma = 0
 # n = 0
-# while i < qtd-1:
-#     i = i - 1
-#     for i in range(qtd):
-#         try:
-#             n = int(input(f'Digite o {i+1}º número: '))
-#             soma = soma + n
-#         except:
-#             print(f'Seu {i+1}º input não é um número. Comece de novo e digite os {qtd} números.')
-            
-#             # soma = 0
-#             break
+# j = 0
+# qtd = 0
+
+# while j == 0:
+#     try:
+#         qtd = int(input('Quantos números você deseja somar? '))
+#         j = 1
+#     except:
+#         print(f'Isso não é um número inteiro.')
+
+# while i < qtd:
+#     i+=1
+#     try:
+#         n = int(input(f'Digite o {i}º número: '))
+#         soma = soma + n
+#     except:
+#         print(f'Seu {i}º input não é um número. Tente novamente.')
+#         i-=1
+#         # soma = 0
 
 # print(f'A soma dos números é {soma}')
-
-
-i = 0
-soma = 0
-n = 0
-j = 0
-qtd = 0
-
-while j == 0:
-    try:
-        qtd = int(input('Quantos números você deseja somar? '))
-        j = 1
-    except:
-        print(f'Isso não é um número inteiro.')
-
-while i < qtd:
-    i+=1
-    try:
-        n = int(input(f'Digite o {i}º número: '))
-        soma = soma + n
-    except:
-        print(f'Seu {i}º input não é um número. Tente novamente.')
-        i-=1
-        # soma = 0
-
-print(f'A soma dos números é {soma}')
 
 
 # 2. Crie um programa que receba um número do usuário e calcule o resto da divisão desse número por 5.
@@ -174,32 +156,109 @@ print(f'A soma dos números é {soma}')
 
 # 19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
 
+# numero1 = int(input("Digite um número: "))
+# numero2 = int(input("Digite outro número: "))
+# iguais = numero1 == numero2
 
+# if iguais == True:
+#     print(f'Os números {numero1} e {numero2} são iguais.')
+# else:
+#     print(f'Os números {numero1} e {numero2} são diferentes.')
 
 # 20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
 
+# numero1 = int(input("Digite um número: "))
+# numero2 = int(input("Digite outro número: "))
+# iguais = numero1 == numero2
 
+# if iguais == True:
+#     print(f'Os números {numero1} e {numero2} são iguais.')
+# else:
+#     print(f'Os números {numero1} e {numero2} são diferentes.')
 
 
 # #### try-except e if
 
 # 21: Conversor de Temperatura
 
-
+# try:
+#     numero1 = float(input("Digite um número: "))
+#     farenheit = (numero1 * 1.8) + 32
+#     print(f'A temperatura {numero1}ºC equivale a {farenheit:.2f}F')
+# except ValueError as e:
+#     print(f'Você não digitou um número e recebeu o seguinte erro: {e}')
 
 # 22: Verificador de Palíndromo
 
-
+# entrada = input("Digite uma palavra ou frase: ")
+# if isinstance(entrada, str):
+#     formatado = entrada.replace(" ", "").lower()
+#     if formatado == formatado[::-1]:
+#         print("É um palíndromo.")
+#     else:
+#         print("Não é um palíndromo.")
+#         print(formatado[::-1])
+# else:
+#     print("Entrada inválida. Por favor, digite uma palavra ou frase.")
 
 # 23: Calculadora Simples
 
-
+# try:
+#     num1 = float(input("Digite o primeiro número: "))
+#     num2 = float(input("Digite o segundo número: "))
+#     operador = input("Digite o operador (+, -, *, /): ")
+#     if operador == '+':
+#         resultado = num1 + num2
+#     elif operador == '-':
+#         resultado = num1 - num2
+#     elif operador == '*':
+#         resultado = num1 * num2
+#     elif operador == '/' and num2 != 0:
+#         resultado = num1 / num2
+#     else:
+#         print("Operador inválido ou divisão por zero.")
+#     print("Resultado:", resultado)
+# except ValueError:
+#     print("Erro: Entrada inválida. Certifique-se de inserir números.")
 
 # 24: Classificador de Números
 
+# entrada = input("Digite um número: ")
+# try:
+#     numero = int(entrada)
+#     if numero % 2 == 0:
+#         if numero > 0:
+#             print(f'O número {numero} é par e positivo.')
+#         elif numero < 0:
+#             print(f'O número {numero} é par e negativo.')
+#         else:
+#             print(f'O número {numero} é 0.')
 
+#     else:
+#         if numero > 0:
+#             print(f'O número {numero} é ímpar e positivo.')
+#         elif numero < 0:
+#             print(f'O número {numero} é ímpar e negativo.')
+#         else:
+#             print(f'O número {numero} é 0.')
+# except:
+#     print(entrada, ' não é um número.')
 
 # 25: Conversão de Tipo com Validação
 
 
+# lista_str = input("Insira uma lista de números inteiros separados por vírgula: ").split(',')
+# numeros_int = []
 
+# for item in lista_str:
+#     try:
+#         # Tenta converter e adicionar à nova lista
+#         numeros_int.append(int(item.strip())) # .strip() remove espaços extras
+#     except ValueError:
+#         # Se der erro, avisa e para o laço imediatamente
+#         print(f"'{item.strip()}' não é um número válido. A operação foi cancelada.")
+#         break
+# else:
+#     # Este bloco SÓ é executado se o `for` terminar sem um `break`
+#     print("Todos os valores são válidos. A lista de inteiros é:")
+#     print(numeros_int)
